@@ -1,0 +1,16 @@
+
+<form action="/messages" method="post">
+  <label for="">Name</label>
+  <input type="text" name="recived" value="wizard">
+  <input type="hidden" name="sent" value="<%= current_user.user_name %>">
+  <textarea name="body"></textarea>
+  <button>send message</button>
+</form>
+
+<% @message.each do |message| %>
+                            <%# User.find(comment.user_id).email %>
+  <p>from <%= message.sent %> <%= message.body %></p>
+<% end %>
+
+    <%# User.find(comment.user_id).email %>
+
