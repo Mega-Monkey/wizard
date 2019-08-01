@@ -6,6 +6,8 @@ require_relative 'models/user'
 require_relative 'routes/sessions'
 require_relative 'routes/messages'
 require_relative 'models/message'
+require_relative 'models/item'
+require_relative 'models/auction'
 
 enable :sessions
 
@@ -61,8 +63,15 @@ get '/market' do
   erb :market
 end
 
+get '/market/:item_id' do
+  logged_in?
+  @item = Item.find_by(item_id: params[:item_id])
+  erb :market_sell_form
+end
+
 get '/inventory' do
   logged_in?
+  @items = Item.where(owner_id: current_user.id)
   erb :inventory
 end
 

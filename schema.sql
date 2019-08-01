@@ -9,7 +9,22 @@ CREATE TABLE users (
 
 CREATE TABLE messages (
     message_id serial primary key,
-    sent varchar(100),
-    recived varchar(100),
+    sender_id int,
+    reciver_id int,
+    subject varchar(100),
     body text
+);
+
+CREATE TABLE auctions (
+    auction_id serial primary key,
+    seller_id int,
+    item_id int,
+    sell_price int
+);
+
+CREATE TABLE items (
+    item_id serial primary key,
+    owner_id int,
+    item_name varchar(100),
+    item_image varchar(100)
 );
