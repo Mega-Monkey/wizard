@@ -4,16 +4,29 @@
   <meta charset="UTF-8">
   <title>Wizards</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="banner">
+<div class="scrollLeftHeader"></div>
 <div class="header">
+  <img class="hat" src="/assets/hat_logo.png" alt=""> 
   <h1>Wizard</h1>
+  
   <p><%= current_user.user_name %></p>
+  <div class="coin_group">
+    <img src="/assets/coin_stack.png" alt=""> 
+    <div><%= current_user.gold %></div>
+  </div>
   <form action="/sessions" method="post">
         <input type="hidden" name="_method" value="delete">
         <button>logout</button>
   </form>
 </div>
+<div class="scrollRightHeader"></div>
+</div>
+<div class="navAll">
+<div class="scrollLeftNav"></div>
 <div class="nav">
   <img src="/<%= current_user.avatar %>" alt="">
   <a href='/user_home'>Home</a>
@@ -22,7 +35,8 @@
   <a href='/adventure'>Adventure</a>
   <a href='/messages'>Messages</a>
 </div>
-
+<div class="scrollRightNav"></div>
+</div>
 
   <%= yield %>
 

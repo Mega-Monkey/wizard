@@ -1,8 +1,170 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    
+}
+body{
+    background-image: url(/assets/tree_background.png);
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+button {
+    color: black;
+    text-decoration: none;
+}
 .header {
     display: flex;
     justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+    height: 145px;
+    width: -webkit-fill-available;
+    background-repeat-y: no-repeat;
+    margin-top: 3px;
+    margin-bottom: -17px;
+    background-image: url(/assets/scroll_center.png);
 }
 .nav {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+   
+    font-size: 20px;
+    height: 145px;
+    margin-bottom: 50px;
+    background-image: url(/assets/scroll_center.png);
+    width: -webkit-fill-available;
+}
+.navAll {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+}
+img {
+    vertical-align: center;
+}
+.item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    vertical-align: center;
+}
+.avatar_button_green {
+    transition: all .8s ease;
+    background-color: transparent;
+    color: transparent;
+    border: transparent
+} 
+.avatar_button_blue {
+    transition: all .8s ease;
+    background-color: transparent;
+    color: transparent;
+    border: transparent
+} 
+.avatar_button_red {
+    transition: all .8s ease;
+    background-color: transparent;
+    color: transparent;
+    border: transparent
+}
+.avatar_button_green:hover {
+    background-color: rgb(67, 45, 29);
+    color: #000;
+} 
+.avatar_button_blue:hover {
+    background-color: grey;
+    color: #000;
+} 
+.avatar_button_red:hover {
+    background-color: grey;
+    color: #000;
+}
+.clicked {
+    background-color: grey;
+    color: #000;
+}
+.login {
+    text-align: center;
+    background: #fff;
+    height: 70px;
+    
+}
+.coin_group {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+}
+.message_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+}
+.message_block > * {
+    width: 40%
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    
+}
+.messages > * {
+    width: 40%
+}
+.pulsate {
+-webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+.scrollLeftHeader{
+    background-image: url(/assets/scroll_left.png);
+    width: 24px;
+    height: 150px;
+    margin-top: 25px;
+}
+.scrollRightHeader{
+    background-image: url(/assets/scroll_right.png);
+    width: 24px;
+    height: 150px;
+    margin-top: 25px;
+
+}
+.scrollLeftNav{
+    background-image: url(/assets/scroll_left.png);
+    width: 24px;
+    height: 220px;
+    background-repeat-y: no-repeat;
+    margin-top: 25px;
+}
+.scrollRightNav{
+    background-image: url(/assets/scroll_right.png);
+    width: 24px;
+    height: 220px;
+    background-repeat-y: no-repeat;
+    margin-top: 25px;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+}
+.hat {
+    height: 180px;
 }

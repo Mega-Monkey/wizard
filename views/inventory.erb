@@ -1,10 +1,12 @@
 <h1>ITEMS</h1>
 
 <% @items.each do |item| %>
-<img src="<%= item.item_image %>" alt="">
-<p><%= item.item_name %></p>
+<div class="item"></div>
+    <img src="<%= item.image %>" alt="">
+    <p><%= item.name %></p>
 
-<form action="/market/<%= item.item_id %>" method="get">
-    <button>Auction</button>
-</form>
+    <form action="/market/<%= item.item_id %>" method="get">
+        <button>Auction</button>
+    </form>
+</div>
 <% end %>

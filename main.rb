@@ -24,6 +24,13 @@ helpers do
     end
   end
 
+  def back_to_login
+
+    if current_user == false
+    redirect '/'
+    end
+  end
+
   def current_user
     User.find_by(id: session[:user_id])
   end
@@ -60,18 +67,60 @@ end
 
 get '/market' do
   logged_in?
+  # binding.pry
+  @items = Item.where(status: 'auction')
   erb :market
+end
+
+post '/market' do
+  logged_in?
+  item = Item.find_by(item_id: params[:item_id])
+  item.status = 'auction'
+  item.auction_price = params[:auction_price]
+  item.save
+  # binding.pry
+  redirect '/market'
+end
+
+post '/return_from_auction' do
+  logged_in?
+  item = Item.find_by(item_id: params[:item_id])
+  item.status = 'inventory'
+  item.save
+  # binding.pry
+  redirect '/market'
 end
 
 get '/market/:item_id' do
   logged_in?
   @item = Item.find_by(item_id: params[:item_id])
+  # binding.pry
   erb :market_sell_form
+end
+
+post '/auction_buy' do
+  logged_in?
+  item = Item.find_by(item_id: params[:item_id])
+  buyer = current_user
+  seller = User.find_by(id: item.owner_id)
+  if buyer.gold >= item.auction_price
+    # binding.pry
+    buyer.gold = buyer.gold - item.auction_price
+    seller.gold = seller.gold + item.auction_price
+    item.owner_id = current_user.id
+    item.status = 'inventory'
+    item.save
+    buyer.save
+    seller.save
+    redirect '/inventory'
+  else
+    redirect '/market'
+  end
 end
 
 get '/inventory' do
   logged_in?
-  @items = Item.where(owner_id: current_user.id)
+  @items = Item.where(status: "inventory").where(owner_id: current_user)
   erb :inventory
 end
 

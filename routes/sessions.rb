@@ -3,12 +3,12 @@ get '/login' do
   end
   
   post '/sessions' do
+    back_to_login
     logged_in?
     # params[:email]
     # params[:password]
     # 1. look up the user with email address
     user = User.find_by(user_name: params[:user_name])
-    user.avatar = "assets/dog_wizard_grey.png"
     # 2.
     if user && user.authenticate(params[:password])
       # create a session
@@ -22,6 +22,7 @@ get '/login' do
   end
   
   delete '/sessions' do
+    back_to_login
     logged_in?
     # 1. destroy the session
     session[:user_id] = nil

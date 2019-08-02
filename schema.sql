@@ -23,8 +23,21 @@ CREATE TABLE auctions (
 );
 
 CREATE TABLE items (
-    item_id serial primary key,
+    id serial primary key,
     owner_id int,
-    item_name varchar(100),
-    item_image varchar(100)
+    name varchar(100),
+    image varchar(100),
+    status varchar(100),
+    auction_price int
 );
+
+ALTER TABLE users
+ADD gold int;
+
+item = Item.new;
+item.owner_id = 20;
+item.name = 'Ancient scroll of fart jokes';
+item.image = '/assets/scroll_1.png';
+item.status = 'inventory';
+item.auction_price = 0;
+item.save;
