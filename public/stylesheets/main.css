@@ -89,7 +89,7 @@ img {
 }
 .login {
     text-align: center;
-    background: #fff;
+    
     height: 70px;
     
 }
@@ -143,23 +143,23 @@ button {
     }
     20% { 
         color: purple;
-        font-size: 1.3rem;
+        /* font-size: 1.3rem; */
     }
     40% { 
-        color: yellow;
-        font-size: 1.7rem;
+        color: brown;
+        /* font-size: 1.7rem; */
     }
     60% { 
         color: green;
-        font-size: 2rem;
+        /* font-size: 2rem; */
     }
     80% { 
         color: blue;
-        font-size: 1.7rem;
+        /* font-size: 1.7rem; */
     }
     100% { 
         color: red;
-        font-size: 1rem;
+        /* font-size: 1rem; */
     }
 }
 .scrollLeftHeader{
