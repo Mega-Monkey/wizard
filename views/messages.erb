@@ -1,23 +1,24 @@
 
+<div class="message_block">
+    <form class="message_form" action="/messages" method="post">
+      <label for="">Name</label>
+      <input type="text" name="user_name" value="<% params{:user_name} %>">
 
-  <form class="message_block" action="/messages" method="post">
-    <label for="">Name</label>
-    <input type="text" name="user_name" value="<% params{:user_name} %>">
+      <label for="">Subject</label>
+      <input type="text" name="subject" value="<% params{:subject} %>">
 
-    <label for="">Subject</label>
-    <input type="text" name="subject" value="<% params{:subject} %>">
+      <input type="hidden" name="sender_id" value="<%= current_user.id %>">
+      <textarea name="body"></textarea>
 
-    <input type="hidden" name="sender_id" value="<%= current_user.id %>">
-    <textarea name="body"></textarea>
+      <button>send message</button>
+    </form>
 
-    <button>send message</button>
-  </form>
-
-<div class="messages">
-    <% @message.each do |message| %>
-                                <%# User.find(comment.user_id).email %>
-      <p>from <%= message.sender.user_name %> <a href="/messages/<%= message.id %>"><%= message.subject %></a></p>
-    <% end %>
+  <div class="messages">
+      <% @message.each do |message| %>
+                                  <%# User.find(comment.user_id).email %>
+        <p>from <%= message.sender.user_name %> <a href="/messages/<%= message.id %>"><%= message.subject %></a></p>
+      <% end %>
+  </div>
 </div>
     <%# User.find(comment.user_id).email %>
 
