@@ -7,4 +7,4 @@ require_relative 'models/item'
 require_relative 'models/auction'
 
 
-binding.pry
+# binding.pry
