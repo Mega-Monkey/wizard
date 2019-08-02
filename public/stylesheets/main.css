@@ -72,20 +72,16 @@ img {
     border: transparent
 }
 .avatar_button_green:hover {
-    background-color: rgb(67, 45, 29);
-    color: #000;
-} 
+    background-image: url(/assets/wood_planks.png);
+}
 .avatar_button_blue:hover {
-    background-color: grey;
-    color: #000;
+    background-image: url(/assets/wood_planks.png);
 } 
 .avatar_button_red:hover {
-    background-color: grey;
-    color: #000;
+    background-image: url(/assets/wood_planks.png);
 }
 .clicked {
-    background-color: grey;
-    color: #000;
+    background-image: url(/assets/wood_planks.png);
 }
 .login {
     text-align: center;
@@ -199,4 +195,11 @@ button {
 }
 .hat {
     height: 110px;
+}
+.uder_consrtution_container {
+    display: flex;
+    justify-content: center;
+}
+.under_construction {
+    height: 400px;
 }
