@@ -1,13 +1,21 @@
-<h1>ITEMS</h1>
+<div class="inventory">
+<h1 class="itemHeading">Items</h1>
 
 <% @items.each do |item| %>
 <div class="item">
-    <img src="<%= item.image %>" alt="">
-    <p><%= item.name %></p>
-
-    <form action="/market/<%= item.item_id %>" method="get">
-        <button>Auction</button>
-    </form>
+    <div class="itemGroup">
+        <div class="itemImage">
+                <img src="<%= item.image %>" alt="">
+        </div>
+        <div class="itemName">
+                <p><%= item.name %></p>
+        </div>
+    </div>
+    <div class="itemFunction">
+        <form action="/market/<%= item.item_id %>" method="get">
+            <button class="auctionButton">Auction</button>
+        </form>
     </div>
 </div>
 <% end %>
+</div>

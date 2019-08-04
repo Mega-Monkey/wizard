@@ -1,8 +1,12 @@
 * {
     font-family: 'Press Start 2P', cursive;
+}
+/* LAYOUT */
+.ScrollLogin {
+    display: flex;
     
 }
-body{
+body {
     background-image: url(/assets/tree_background.png);
 }
 a {
@@ -25,139 +29,6 @@ button {
     margin-bottom: -17px;
     background-image: url(/assets/scroll_center_small.png);
 }
-.nav {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-   
-    font-size: 20px;
-    height: 145px;
-    margin-bottom: 50px;
-    background-image: url(/assets/scroll_center_small.png);
-    width: -webkit-fill-available;
-    margin-top: -54px;
-    
-}
-.navAll {
-    display: flex;
-    justify-content: space-evenly;
-    vertical-align: center;
-    align-items: center;
-}
-img {
-    vertical-align: center;
-}
-.item {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    vertical-align: center;
-}
-.avatar_button_green {
-    transition: all .8s ease;
-    background-color: transparent;
-    color: transparent;
-    border: transparent
-} 
-.avatar_button_blue {
-    transition: all .8s ease;
-    background-color: transparent;
-    color: transparent;
-    border: transparent
-} 
-.avatar_button_red {
-    transition: all .8s ease;
-    background-color: transparent;
-    color: transparent;
-    border: transparent
-}
-.avatar_button_green:hover {
-    background-image: url(/assets/wood_planks.png);
-}
-.avatar_button_blue:hover {
-    background-image: url(/assets/wood_planks.png);
-} 
-.avatar_button_red:hover {
-    background-image: url(/assets/wood_planks.png);
-}
-.clicked {
-    background-image: url(/assets/wood_planks.png);
-}
-.login {
-    text-align: center;
-    
-    height: 70px;
-    
-}
-.coin_group {
-    display: flex;
-    justify-content: space-evenly;
-    vertical-align: center;
-    align-items: center;
-}
-.message_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    background-image: url(/assets/scroll_center.png);
-    height: 110px;
-    padding-top: 30px;
-    
-}
-input[type="text"] {
-    background: transparent;
-    border: none;
-}
-textarea {
-    background: transparent;
-    border: none;
-}
-button {
-    background: transparent;
-    border: none;
-}
-
-.message_block {
-    display: flex;
-    justify-content: space-around;
-    
-}
-.message_block > * {
-    width: 40%;
-    margin-top: -95px;
-}
-
-
-.pulsate {
--webkit-animation: pulsate 3s ease-out;
-    -webkit-animation-iteration-count: infinite; 
-    opacity: 0.5;
-}
-@-webkit-keyframes pulsate {
-    0% { 
-        color: red;
-    }
-    20% { 
-        color: purple;
-        /* font-size: 1.3rem; */
-    }
-    40% { 
-        color: brown;
-        /* font-size: 1.7rem; */
-    }
-    60% { 
-        color: green;
-        /* font-size: 2rem; */
-    }
-    80% { 
-        color: blue;
-        /* font-size: 1.7rem; */
-    }
-    100% { 
-        color: red;
-        /* font-size: 1rem; */
-    }
-}
 .scrollLeftHeader{
     background-image: url(/assets/scroll_left_small.png);
     width: 24px;
@@ -169,7 +40,31 @@ button {
     width: 24px;
     height: 150px;
     margin-top: 25px;
-
+}
+.coin_group {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+}
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    font-size: 20px;
+    height: 145px;
+    margin-bottom: 50px;
+    background-image: url(/assets/scroll_center_small.png);
+    width: -webkit-fill-available;
+    margin-top: -54px;
+}
+.navAll {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+    margin-bottom: -90px;
 }
 .scrollLeftNav{
     background-image: url(/assets/scroll_left_small.png);
@@ -196,6 +91,235 @@ button {
 .hat {
     height: 110px;
 }
+img {
+    vertical-align: center;
+}/* SIGN UP PAGE */
+.scrollSignUpHeaderLeft {
+    background-image: url(/assets/scroll_left_small.png);
+    width: 24px;
+    height: 220px;
+    background-repeat-y: no-repeat;
+    margin-top: 5px;
+}
+.scrollSignUpHeaderRight {
+    background-image: url(/assets/scroll_right_small.png);
+    width: 24px;
+    height: 220px;
+    background-repeat-y: no-repeat;
+    margin-top: 5px;
+}
+.avatars {
+    margin-top: 20px;
+}
+.avatar_button_green, .avatar_button_blue, .avatar_button_red {
+    transition: all .8s ease;
+    background-image: transparent;
+    /* background-color: transparent; */
+    color: transparent;
+    border: transparent solid;
+} 
+.avatar_button_green:hover, .avatar_button_blue:hover, .avatar_button_red:hover {
+    background-image: url(/assets/stone_wall.png);
+    border: #2b2727 solid;
+}
+.clicked {
+    background-image: url(/assets/stone_wall.png);
+    border: #2b2727 solid;
+}
+/* LOG IN PAGE */
+.login {
+    background-image: url(/assets/stone_wall.png);
+    text-align: center;
+    height: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: #2b2727 solid;
+    color: #bbb9b7;
+    margin-top: -55px;
+}
+.loginButton {
+    background: transparent;
+    border: none;
+    color: #bbb9b7;
+}
+.passwordBar {
+    background: transparent;
+    border: none;
+}
+.pulsate {
+    -webkit-animation: pulsate 3s ease-out;
+        -webkit-animation-iteration-count: infinite; 
+        opacity: 0.5;
+    }
+    @-webkit-keyframes pulsate {
+        0% { 
+            color: red;
+        }
+        20% { 
+            color: purple;
+            /* font-size: 1.3rem; */
+        }
+        40% { 
+            color: brown;
+            /* font-size: 1.7rem; */
+        }
+        60% { 
+            color: green;
+            /* font-size: 2rem; */
+        }
+        80% { 
+            color: blue;
+            /* font-size: 1.7rem; */
+        }
+        100% { 
+            color: red;
+            /* font-size: 1rem; */
+        }
+    }
+/* USER HOME */
+.avatarContainer {
+    display: flex;
+    justify-content: center;
+}
+/* INVENTORY */
+.inventory {
+    background-image: url(/assets/wood_planks.png);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: #4b2e07 solid;
+}
+.item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    vertical-align: center;
+    justify-content: space-between;
+    
+}
+.itemName {
+    display: flex;
+    color: beige;
+}
+.itemFunction {
+    
+}
+.itemHeading {
+    text-align: center;
+    color: beige;
+}
+.itemGroup {
+    display: flex;
+    align-content: center;
+}
+.auctionButton, .cancelButton, .buyButton{
+    color: beige;
+}
+/* MARKET */
+.marketSell, .market, .message_block, .messageVeiwWhole{
+    background-image: url(/assets/wood_planks.png);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: #4b2e07 solid;
+}
+.sellHeader, .marketHeader {
+    text-align: center;
+    color: beige;
+}
+.sellItem, .auction {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    vertical-align: center;
+    justify-content: space-between;
+    color: beige;
+}
+.sellImage {
+    vertical-align: center;
+    color: beige;
+}
+.sellGroup {
+    display: flex;
+    justify-content: left;
+    color: beige;
+}
+/* MESSAGES */
+.messageVeiwPage {
+    display: flex;
+    justify-content: center;
+}
+.messageVeiwWhole {
+    display: flex;
+    text-align: center;
+}
+.wholeScroll, .messageVeiwWhole, .messageVeiwWhole {
+    display: flex;
+    justify-content: left;
+}
+.message_form, .messageView {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-image: url(/assets/scroll_full_open_center.png);
+    height: 210px;
+    width: 168px;
+    padding-top: 30px;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    
+}
+.scrollOpenlLeft, .messagesVeiwLeft {
+    height: 64px;
+    width: 80px;
+    background-image: url(/assets/scroll_full_open_left.png);
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    margin-top: -40px;
+}
+.scrollOpenRight, .messagesVeiwRight {
+    height: 50px;
+    width: 50px;
+    background-image: url(/assets/scroll_full_open_right.png);
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    margin-top: 200px;
+}
+input[type="text"] {
+    background: transparent;
+    border: none;
+}
+textarea {
+    background: transparent;
+    border: none;
+    height: 120px;
+}
+button {
+    background: transparent;
+    border: none;
+}
+.message_block {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+.message_block > * { 
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.message {
+    background-image: url(/assets/closed_scroll.png);
+    height: 56px;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    color: beige;
+}
+
+
+/* OTHER */
+
 .uder_consrtution_container {
     display: flex;
     justify-content: center;
@@ -203,3 +327,4 @@ button {
 .under_construction {
     height: 400px;
 }
+

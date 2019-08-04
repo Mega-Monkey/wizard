@@ -1,34 +1,34 @@
-<h1>Market</h1>
+<div class="market">
+    <h1 class="marketHeader">Market</h1>
+    <% @items.each do |item| %>
+    <div class="auction">
+        <% if item.status == 'auction' %>
+            <div class="item">
+                <img src="<%= item.image %>" alt="">
+                <p><%= item.name %></p>
+                    <div class="coin_group">
+                        <img src="assets/coin_stack_one.png" alt="">
+                        <p><%= item.auction_price %></p>
+                    </div>
 
-<% @items.each do |item| %>
-<div class="auction">
-    <% if item.status == 'auction' %>
-        <div class="item">
-        <img src="<%= item.image %>" alt="">
-        <p><%= item.name %></p>
-        <div class="coin_group">
-        <img src="assets/coin_stack_one.png" alt="">
-        <p><%= item.auction_price %></p>
-        </div>
-                        <%# change to != later %>
-        <% if item.owner_id != current_user.id %>
-            <form action="/auction_buy" method="post"> 
-            <input type="hidden" name="item_id" value="<%= item.item_id %>">
-            <button>Buy</button>
-             </form>
+                    <% if item.owner_id != current_user.id %>
+                    <div class="buyButtonContainer">
+                        <form action="/auction_buy" method="post"> 
+                        <input type="hidden" name="item_id" value="<%= item.item_id %>">
+                        <button class="buyButton">Buy</button>
+                        </form>
+                    </div>
+                    <% end %>
+            </div>
+            <% if item.owner_id == current_user.id %>
+            <div class="item">
+                <form action="/return_from_auction" method="post">
+                <input type="hidden" name="item_id" value="<%= item.item_id %>">
+                <button class="cancelButton">cancel</button>
+                </form>
+            </div>
+            <% end %>
         <% end %>
-        </div>
-       
-        <% if item.owner_id == current_user.id %>
-         <div class="item">
-            <form action="/return_from_auction" method="post">
-            <input type="hidden" name="item_id" value="<%= item.item_id %>">
-            <button>cancel</button>
-            </form>
-        </div>
-
-        <% end %>
-         
+    </div>
     <% end %>
 </div>
-<% end %>

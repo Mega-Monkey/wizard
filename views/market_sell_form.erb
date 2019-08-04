@@ -1,8 +1,24 @@
-<img src="<%= @item.image %>" alt="">
 
-<form action="/market" method="post">
-  <label for="">Price</label>
-  <input type="hidden" name="item_id" value="<%= @item.item_id %>">
-  <input type="number" name="auction_price" value="<%= params[:auction_price] %>">
-  <button>Auction</button>
-</form>
+
+<div class="marketSell">
+
+  <h1 class="sellHeader">Sell</h1>
+  <div class="sellItem">
+    <div class="sellGroup">
+      <div class="sellImage">
+        <img src="<%= @item.image %>" alt="">
+      </div>
+      <div class="sellName">
+        <p><%= @item.name %>
+      </div>
+    </div>
+    <div class="sellForm">
+      <form action="/market" method="post">
+        <label for="">Price</label>
+        <input type="hidden" name="item_id" value="<%= @item.item_id %>">
+        <input type="number" name="auction_price" value="<%= params[:auction_price] %>">
+        <button class="auctionButton">Auction</button>
+      </form>
+    </div>
+  </div>
+</div>
