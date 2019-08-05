@@ -4,9 +4,9 @@
     <div class="scrollOpenlLeft"></div>
         <form class="message_form" action="/messages" method="post">
           <label class='form_elements' for="">Name</label>
-          <input class='form_elements' type="text" name="user_name" value="<% params{:user_name} %>">
+          <input class='form_elements messageName' type="text" name="user_name" value="<% params{:user_name} %>">
       <input  type="hidden" name="sender_id" value="<%= current_user.id %>">
-      <textarea class='form_elements' name="body"></textarea>
+      <textarea class='form_elements messageBody' name="body"></textarea>
 
       <button>send message</button>
     </form>

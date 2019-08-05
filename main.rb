@@ -50,30 +50,34 @@ get '/sign_up' do
 end
 
 post '/sign_up_post' do
-  logged_in?
-  user = User.new
-  user.user_name = params[:user_name]
-  user.password = params[:password]
-  user.avatar = params[:_avatar]
-  user.save
-  session[:user_id] = user.id
-  redirect '/user_home'
+  redirect '/' unless logged_in?
+  if params[:_avatar].empty?
+    erb :sign_up, :layout => :layout_not_logged_in
+  else
+    user = User.new
+    user.user_name = params[:user_name]
+    user.password = params[:password]
+    user.avatar = params[:_avatar]
+    user.save
+    session[:user_id] = user.id
+    redirect '/user_home'
+  end
 end
 
 get '/user_home' do
-  logged_in?
+  redirect '/' unless logged_in?
   erb :user_home
 end
 
 get '/market' do
-  logged_in?
+  redirect '/' unless logged_in?
   # binding.pry
   @items = Item.where(status: 'auction')
   erb :market
 end
 
 post '/market' do
-  logged_in?
+  redirect '/' unless logged_in?
   item = Item.find_by(item_id: params[:item_id])
   item.status = 'auction'
   item.auction_price = params[:auction_price]
@@ -83,7 +87,7 @@ post '/market' do
 end
 
 post '/return_from_auction' do
-  logged_in?
+  redirect '/' unless logged_in?
   item = Item.find_by(item_id: params[:item_id])
   item.status = 'inventory'
   item.save
@@ -92,14 +96,14 @@ post '/return_from_auction' do
 end
 
 get '/market/:item_id' do
-  logged_in?
+  redirect '/' unless logged_in?
   @item = Item.find_by(item_id: params[:item_id])
   # binding.pry
   erb :market_sell_form
 end
 
 post '/auction_buy' do
-  logged_in?
+  redirect '/' unless logged_in?
   item = Item.find_by(item_id: params[:item_id])
   buyer = current_user
   seller = User.find_by(id: item.owner_id)
@@ -119,13 +123,13 @@ post '/auction_buy' do
 end
 
 get '/inventory' do
-  logged_in?
+  redirect '/' unless logged_in?
   @items = Item.where(status: "inventory").where(owner_id: current_user)
   erb :inventory
 end
 
 get '/adventure' do
-  logged_in?
+  redirect '/' unless logged_in?
   erb :adventure
 end
 

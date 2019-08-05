@@ -1,11 +1,11 @@
 get '/messages' do
-  logged_in?
-  @message = Message.where(receiver_id: current_user.id)
+  redirect '/' unless logged_in?
+  @message = Message.where(receiver_id: current_user.id).order(message_id: :desc)
   erb :messages
 end
 
 post '/messages' do
-    redirect '/login' unless session[:user_id]
+    redirect '/' unless logged_in?
     # insert messages into db
     # params[:body]
     message = Message.new
@@ -18,6 +18,7 @@ post '/messages' do
 end
 
 get '/messages/:id' do
+  redirect '/' unless logged_in?
   @message = Message.where(message_id: params[:id])
   erb :message_view
 end
